@@ -12,7 +12,7 @@
        android:id="@+id/editText"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:hint="Enter text here"
+       android:hint="@string/enter_text_here"
        android:textSize="20sp"
        android:layout_centerHorizontal="true"/>
 
@@ -21,17 +21,22 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_below="@+id/editText"
-       android:text="Show text entered"
+       android:text="@string/show_text_entered"
        android:layout_centerHorizontal="true"
+       android:layout_marginTop="20dp"
+       android:textColor="@color/colorBlue"
+       android:textStyle="bold"
        />
 
    <Button
        android:id="@+id/button2"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_below="@+id/button"
        android:layout_centerInParent="true"
        android:layout_marginBottom="30dp"
-       android:text="Change color" />
+       android:text="@string/change_background_color"
+       android:textColor="@color/colorOrange"
+      />
+
 
 </RelativeLayout>

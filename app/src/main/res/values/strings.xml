@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProjektiFI</string>
+    <string name="text_goes_here">Text goes here</string>
+    <string name="change_text_color">Change text color</string>
+    <string name="enter_text_here">Enter text here</string>
+    <string name="show_text_entered">Show text entered</string>
+    <string name="change_background_color">Change background color</string>
+
 </resources>
