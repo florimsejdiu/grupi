@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.grupi6.Colors;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button button1;
     Button button2;
     RelativeLayout relativeLayout;
+    TextView textView;
 
     Colors color = new Colors();
 
@@ -38,16 +40,18 @@ public class MainActivity extends AppCompatActivity {
         button1 = findViewById(R.id.button);
         relativeLayout = findViewById(R.id.relativeLayout);
         button2 = findViewById(R.id.button2);
+        textView = findViewById(R.id.textView);
+
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText.getText().length()>0) {
+                if (editText.getText().length() > 0) {
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     String text = editText.getText().toString();
                     intent.putExtra("celesi", text);
-                    startActivityForResult(intent,REQUEST_CODE);
-                }else {
+                    startActivityForResult(intent, REQUEST_CODE);
+                } else {
                     Toast.makeText(MainActivity.this, "Write input first!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -61,6 +65,21 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        if (SecondActivity.btnClicked) {
+
+            final String vlera = getIntent().getStringExtra("teksti");
+            if (getIntent().getExtras() != null) {
+                textView.setText(vlera);
+                textView.setTextColor(Color.BLACK);
+                textView.setTextSize(30);
+                textView.setBackgroundColor(Color.GREEN);
+            } else {
+                Toast.makeText(this, "Extras are null", Toast.LENGTH_SHORT).show();
+            }
+            SecondActivity.btnClicked = false;
+
+        }
     }
 
     @Override
@@ -72,18 +91,19 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
-        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK ){
 
             String result = data.getStringExtra("key");
-            Toast.makeText(this, "Result is: " + result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
 
         }
 
     }
+
     private void showAlertDialog() {
 
-        final Toast toast = Toast.makeText(this, "Color was changed succesfuly", Toast.LENGTH_SHORT);
+        final Toast toast = Toast.makeText(this, "Color was changed successfully!", Toast.LENGTH_SHORT);
 
 
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
