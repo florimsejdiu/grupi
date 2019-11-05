@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cacttus"
+        android:layout_centerHorizontal="true"/>
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -14,8 +22,9 @@
         android:hint="@string/text_goes_here"
         android:layout_centerHorizontal="true"
         android:textSize="40sp"
+        android:layout_below="@+id/logo"
 
-         />
+        />
 
     <Button
         android:id="@+id/button4"
@@ -34,11 +43,11 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
         android:text="@string/change_text_color"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        android:padding="5dp"
         android:background="@color/colorPrimaryDark"/>
 </RelativeLayout>
